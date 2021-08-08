@@ -1,0 +1,17 @@
+databaseChangeLog:
+  -  changeSet:
+       id: add_data_473c9
+       author: tasfik
+       changes:
+         - loadData:
+             file: csv/customers.csv
+             relativeToChangelogFile: true
+             tableName: customer
+         - loadData:
+             file: csv/products.csv
+             relativeToChangelogFile: true
+             tableName: product
+         - loadData:
+             file: csv/transaction_details.csv
+             relativeToChangelogFile: true
+             tableName: transaction_details

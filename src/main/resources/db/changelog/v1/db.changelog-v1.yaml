@@ -1,0 +1,14 @@
+databaseChangeLog:
+
+  - include:
+      file: structure/create_customers_table.yaml
+      relativeToChangelogFile: true
+  - include:
+      file: structure/create_products_table.yaml
+      relativeToChangelogFile: true
+  - include:
+      file: structure/create_transaction_details_table.yaml
+      relativeToChangelogFile: true
+  - include:
+      file: data/add_data.yaml
+      relativeToChangelogFile: true

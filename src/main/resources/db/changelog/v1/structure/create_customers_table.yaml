@@ -1,0 +1,25 @@
+databaseChangeLog:
+  -  changeSet:
+       id: create_customers_table_932e7
+       author: tasfik
+       changes:
+         -  createTable:
+              tableName: customer
+              columns:
+                -  column:
+                     name: id
+                     type: int
+                     autoIncrement: true
+                     constraints:
+                       primaryKey: true
+                       nullable: false
+                -  column:
+                     name: name
+                     type: varchar(30)
+                     constraints:
+                       nullable: false
+                -   column:
+                      name: email
+                      type: varchar(30)
+                      constraints:
+                        nullable: false

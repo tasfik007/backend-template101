@@ -1,0 +1,25 @@
+databaseChangeLog:
+  -  changeSet:
+       id: create_products_table_671b3
+       author: tasfik
+       changes:
+         -  createTable:
+              tableName: product
+              columns:
+                -  column:
+                     name: id
+                     type: int
+                     autoIncrement: true
+                     constraints:
+                       primaryKey: true
+                       nullable: false
+                - column:
+                    name: name
+                    type: varchar(30)
+                    constraints:
+                      nullable: false
+                - column:
+                    name: price
+                    type: int
+                    constraints:
+                      nullable: false
