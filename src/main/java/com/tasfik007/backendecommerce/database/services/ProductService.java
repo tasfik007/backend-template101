@@ -16,15 +16,21 @@ public class ProductService {
     public List<Product> getAll(){
         return productRepository.findAll();
     }
-    public Product getById(Integer id){
-        return productRepository.getById(id);
+
+    public Product getById(Integer id) throws Exception {
+        return productRepository.findById(id).orElseThrow(()->new Exception(
+                "Customer not found with ID: " + id,
+                new Throwable()
+        ));
     }
+
     @Transactional
     public Product create(Product product){
         return productRepository.save(product);
     }
+
     @Transactional
-    public Product update(Product newProduct){
+    public Product update(Product newProduct) throws Exception {
         Product oldProduct = getById(newProduct.getId());
         oldProduct.setName(newProduct.getName());
         oldProduct.setPrice(newProduct.getPrice());

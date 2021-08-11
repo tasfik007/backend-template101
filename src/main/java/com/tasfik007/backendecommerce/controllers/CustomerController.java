@@ -22,7 +22,7 @@ public class CustomerController {
     }
 
     @GetMapping(path="/{id}")
-    public Customer getById(@PathVariable("id") Integer id){
+    public Customer getById(@PathVariable("id") Integer id) throws Exception {
         return customerService.getById(id);
     }
 
